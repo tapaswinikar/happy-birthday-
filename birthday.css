@@ -1,0 +1,491 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:50px 0;
+
+    background:linear-gradient(135deg,#08112d,#2d0b59,#12042a);
+
+    font-family:'Poppins',sans-serif;
+
+    position:relative;
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    animation:twinkle 3s infinite alternate;
+
+    opacity:.8;
+
+    pointer-events:none;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    width:90%;
+
+    max-width:900px;
+}
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:70px;
+
+    color:white;
+
+    text-shadow:0 0 20px #ff5ca8;
+
+    margin-bottom:10px;
+}
+
+.subtitle{
+
+    color:#ffe4ef;
+
+    font-size:20px;
+
+    margin-bottom:50px;
+}
+
+/* ==========================================
+   BALLOONS
+========================================== */
+
+.balloon{
+
+    position:absolute;
+
+    width:70px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    animation:floatBalloon linear infinite;
+}
+
+.balloon::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:90px;
+
+    width:2px;
+
+    height:100px;
+
+    background:white;
+}
+
+.balloon1{
+
+    background:#ff4d88;
+
+    left:5%;
+
+    bottom:-150px;
+
+    animation-duration:12s;
+}
+
+.balloon2{
+
+    background:#5ec8ff;
+
+    left:25%;
+
+    bottom:-180px;
+
+    animation-duration:15s;
+}
+
+.balloon3{
+
+    background:#ffd84d;
+
+    left:50%;
+
+    bottom:-160px;
+
+    animation-duration:13s;
+}
+
+.balloon4{
+
+    background:#8cff98;
+
+    right:20%;
+
+    bottom:-170px;
+
+    animation-duration:16s;
+}
+
+.balloon5{
+
+    background:#c792ff;
+
+    right:5%;
+
+    bottom:-140px;
+
+    animation-duration:11s;
+}
+
+/* ==========================================
+   CAKE
+========================================== */
+
+.cake{
+
+    position:relative;
+
+    width:320px;
+
+    margin:40px auto;
+}
+
+/* Plate */
+
+.plate{
+
+    width:340px;
+
+    height:22px;
+
+    background:#d8d8d8;
+
+    border-radius:50%;
+
+    margin:auto;
+}
+
+/* Cake Layers */
+
+.cake-bottom{
+
+    width:320px;
+
+    height:90px;
+
+    background:#ff9db8;
+
+    border-radius:0 0 20px 20px;
+}
+
+.cake-middle{
+
+    width:280px;
+
+    height:70px;
+
+    background:#fff0a6;
+
+    margin:auto;
+}
+
+.cake-top{
+
+    width:240px;
+
+    height:60px;
+
+    background:#ffdaee;
+
+    margin:auto;
+
+    border-radius:20px 20px 0 0;
+}
+
+/* ==========================================
+   CANDLES
+========================================== */
+
+.candles{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:45px;
+
+    margin-bottom:-5px;
+}
+
+.candle{
+
+    width:14px;
+
+    height:70px;
+
+    background:white;
+
+    border-radius:10px;
+
+    position:relative;
+
+    cursor:pointer;
+}
+
+.flame{
+
+    position:absolute;
+
+    top:-22px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:16px;
+
+    height:22px;
+
+    background:gold;
+
+    border-radius:50% 50% 50% 50%;
+
+    box-shadow:0 0 20px orange;
+
+    animation:flicker .2s infinite alternate;
+}
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+#birthdayMessage{
+
+    display:none;
+
+    margin-top:40px;
+
+    background:rgba(255,255,255,.08);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+}
+
+#birthdayMessage h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+}
+
+#birthdayMessage p{
+
+    line-height:2;
+
+    font-size:18px;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+#nextBtn{
+
+    display:none;
+
+    margin-top:35px;
+
+    padding:15px 35px;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#ff4d88,#ff7eb3);
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#nextBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 20px #ff4da6;
+}
+
+/* ==========================================
+   CONFETTI
+========================================== */
+
+.confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.confetti-piece{
+
+    position:absolute;
+
+    width:10px;
+
+    height:18px;
+
+    animation:confettiFall linear forwards;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes floatBalloon{
+
+    from{
+
+        transform:translateY(0);
+    }
+
+    to{
+
+        transform:translateY(-130vh);
+    }
+}
+
+@keyframes flicker{
+
+    from{
+
+        transform:translateX(-50%) scale(.9);
+    }
+
+    to{
+
+        transform:translateX(-50%) scale(1.1);
+    }
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.4;
+    }
+
+    to{
+
+        opacity:1;
+    }
+}
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:translateY(-50px) rotate(0);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:translateY(110vh) rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:45px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.cake{
+
+transform:scale(.8);
+
+}
+
+#birthdayMessage h2{
+
+font-size:28px;
+
+}
+
+#birthdayMessage p{
+
+font-size:16px;
+
+}
+
+}

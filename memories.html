@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="memories.css">
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="floating-hearts"></div>
+
+<div class="container">
+
+    <h1>Our Beautiful Memories ❤️</h1>
+
+    <p class="subtitle">
+
+        Every picture holds a beautiful story...
+
+    </p>
+
+    <div class="gallery">
+
+        <div class="photo-card">
+
+            <img src="images/cpl-1.jpg" alt="Memory 1">
+
+            <p>Our First Memory ❤️</p>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img src="images/cpl-2.png" alt="Memory 2">
+
+            <p>One of My Favorite Days ✨</p>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img src="images/cpl-3.jpg" alt="Memory 3">
+
+            <p>Smiles That Mean Everything 😊</p>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img src="images/cpl-4.jpg" alt="Memory 4">
+
+            <p>Forever Together ❤️</p>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img src="images/cpl-5.jpg" alt="Memory 5">
+
+            <p>My Happy Place 🌸</p>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img src="images/cpl-6.jpg" alt="Memory 6">
+
+            <p>My sweet and sour💖</p>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img src="images/cpl-7.jpg" alt="Memory 7">
+
+            <p>The Best Is Yet To Come 💖</p>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img src="images/cpl-8.jpg" alt="Memory 8">
+
+            <p>The most special in my life💖</p>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img src="images/cpl-9.jpg" alt="Memory 9">
+
+            <p>My love for you will never end ❣️</p>
+
+        </div>
+
+    </div>
+
+    <a href="reasons.html" id="nextBtn">
+
+        Next Surprise ❤️
+
+    </a>
+
+</div>
+
+<!-- Image Preview -->
+
+<div id="lightbox">
+
+    <span id="closeBtn">&times;</span>
+
+    <img id="lightboxImg">
+
+</div>
+
+<script src="privacy.js"></script>
+<script src="memories.js"></script>
+<script>
+
+    /* Prevent casual right-click saving */
+
+    document.addEventListener(
+        "contextmenu",
+        function (event) {
+            event.preventDefault();
+        }
+    );
+
+
+    /* Prevent dragging images */
+
+    document.addEventListener(
+        "dragstart",
+        function (event) {
+
+            if (
+                event.target.tagName === "IMG" ||
+                event.target.tagName === "VIDEO"
+            ) {
+                event.preventDefault();
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+
+</html>

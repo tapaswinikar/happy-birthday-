@@ -1,0 +1,448 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#050816,#1a0635,#32115d);
+
+    color:white;
+
+    position:relative;
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    animation:twinkle 3s infinite alternate;
+
+    opacity:.7;
+
+    pointer-events:none;
+}
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.floating-hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.floating-hearts span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff5ca8;
+
+    animation:floatHeart linear infinite;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:850px;
+
+    text-align:center;
+
+    padding:40px;
+
+    position:relative;
+
+    z-index:5;
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:65px;
+
+    color:white;
+
+    text-shadow:0 0 20px #ff5ca8;
+
+    margin-bottom:15px;
+}
+
+.subtitle{
+
+    font-size:20px;
+
+    color:#ffdbe8;
+
+    margin-bottom:30px;
+}
+
+/* ==========================================
+   COUNTER
+========================================== */
+
+.counter{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#ffd700;
+
+    margin-bottom:25px;
+}
+
+/* ==========================================
+   REASON CARD
+========================================== */
+
+.reason-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    min-height:260px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 0 30px rgba(255,92,168,.3);
+
+    transition:.4s;
+}
+
+.reason-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 40px rgba(255,92,168,.7);
+}
+
+.reason-card h2{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+}
+
+.reason-card p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:white;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+#showReason{
+
+    margin-top:35px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff4d88,#ff8ec7);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#showReason:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px #ff4da6;
+}
+
+/* ==========================================
+   FINISH MESSAGE
+========================================== */
+
+#finishMessage{
+
+    display:none;
+
+    margin-top:40px;
+
+    background:rgba(255,255,255,.08);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(15px);
+
+    animation:fadeUp 1s ease forwards;
+}
+
+#finishMessage h2{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+    color:#ffd700;
+}
+
+#finishMessage p{
+
+    font-size:18px;
+
+    line-height:1.8;
+}
+
+/* ==========================================
+   NEXT BUTTON
+========================================== */
+
+#nextBtn{
+
+    display:none;
+
+    margin-top:40px;
+
+    padding:16px 40px;
+
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#ff4d88,#ff7eb3);
+
+    color:white;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#nextBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px #ff4da6;
+}
+
+/* ==========================================
+   CONFETTI
+========================================== */
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.confetti-piece{
+
+    position:absolute;
+
+    width:10px;
+
+    height:18px;
+
+    animation:confettiFall linear forwards;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.4;
+    }
+
+    to{
+
+        opacity:1;
+    }
+}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:translateY(-50px) rotate(0deg);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:translateY(110vh) rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.container{
+
+padding:20px;
+
+}
+
+h1{
+
+font-size:42px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.reason-card{
+
+padding:25px;
+
+min-height:220px;
+
+}
+
+.reason-card h2{
+
+font-size:40px;
+
+}
+
+.reason-card p{
+
+font-size:18px;
+
+}
+
+#finishMessage h2{
+
+font-size:28px;
+
+}
+
+#finishMessage p{
+
+font-size:16px;
+
+}
+
+}

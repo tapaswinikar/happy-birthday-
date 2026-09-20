@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Future ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Georgia, 'Times New Roman', serif;
+            background:
+                radial-gradient(circle at top, #ffe8f0, transparent 40%),
+                linear-gradient(135deg, #fff5f8, #ffe0eb, #fff7fa);
+
+            color: #5a2638;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: pageIn 1s ease forwards;
+        }
+
+        @keyframes pageIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Floating hearts */
+
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 20px;
+            pointer-events: none;
+            animation: floatUp linear forwards;
+            z-index: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main container */
+
+        .container {
+            position: relative;
+            z-index: 2;
+
+            width: 90%;
+            max-width: 900px;
+
+            margin: auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .small-title {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #b34b70;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 70px);
+            color: #8f294f;
+            margin-bottom: 15px;
+
+            text-shadow:
+                2px 2px 10px rgba(143, 41, 79, 0.15);
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #7b4658;
+            margin-bottom: 45px;
+            line-height: 1.7;
+        }
+
+        /* Future cards */
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+
+        .future-card {
+            background: rgba(255, 255, 255, 0.72);
+
+            border: 1px solid rgba(255, 130, 165, 0.35);
+
+            border-radius: 25px;
+
+            padding: 30px 25px;
+
+            box-shadow:
+                0 15px 40px rgba(120, 40, 70, 0.12);
+
+            backdrop-filter: blur(8px);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .future-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 45px rgba(120, 40, 70, 0.2);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .future-card h2 {
+            color: #9c3158;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .future-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #704253;
+        }
+
+        /* Special letter */
+
+        .letter {
+            background: rgba(255, 255, 255, 0.8);
+
+            border-radius: 30px;
+
+            padding: 40px 30px;
+
+            margin: 20px auto 45px;
+
+            max-width: 750px;
+
+            border: 1px solid rgba(255, 130, 165, 0.4);
+
+            box-shadow:
+                0 15px 40px rgba(120, 40, 70, 0.12);
+        }
+
+        .letter h2 {
+            color: #8f294f;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .letter p {
+            font-size: 18px;
+            line-height: 2;
+            color: #633747;
+        }
+
+        .highlight {
+            color: #b52f5c;
+            font-weight: bold;
+        }
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            background: #a9345c;
+            color: white;
+
+            box-shadow:
+                0 8px 20px rgba(169, 52, 92, 0.25);
+
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.03);
+
+            box-shadow:
+                0 12px 25px rgba(169, 52, 92, 0.35);
+        }
+
+        .back-btn {
+            background: white;
+            color: #9c3158;
+
+            border: 1px solid #e7a1b7;
+        }
+
+        /* Footer */
+
+        .footer {
+            margin-top: 45px;
+
+            font-size: 15px;
+
+            color: #9b6475;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 650px) {
+
+            .container {
+                padding-top: 40px;
+            }
+
+            .future-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .letter {
+                padding: 30px 20px;
+            }
+
+            .letter p {
+                font-size: 16px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="small-title">
+            A little glimpse of tomorrow ✨
+        </div>
+
+        <h1>Our Future ❤️</h1>
+
+        <p class="subtitle">
+            I don't know exactly what tomorrow will bring...
+            <br>
+            but I know who I want beside me. 🥺
+        </p>
+
+
+        <!-- Future Cards -->
+
+        <div class="future-grid">
+
+            <div class="future-card">
+
+                <div class="icon">🌅</div>
+
+                <h2>More Sunrises</h2>
+
+                <p>
+                    I want to wake up beside you,
+                    see your sleepy face,
+                    and start countless beautiful
+                    mornings together.
+                </p>
+
+            </div>
+
+
+            <div class="future-card">
+
+                <div class="icon">✈️</div>
+
+                <h2>Our Adventures</h2>
+
+                <p>
+                    New places, random trips,
+                    silly pictures, late-night talks
+                    and memories that we will laugh
+                    about years later.
+                </p>
+
+            </div>
+
+
+            <div class="future-card">
+
+                <div class="icon">🏡</div>
+
+                <h2>Our Little Home</h2>
+
+                <p>
+                    Someday, I want a little place
+                    that feels like ours —
+                    filled with laughter, love,
+                    comfort and lots of memories.
+                </p>
+
+            </div>
+
+
+            <div class="future-card">
+
+                <div class="icon">💍</div>
+
+                <h2>Always Us</h2>
+
+                <p>
+                    Through every good day and every
+                    difficult one, I want us to keep
+                    choosing each other.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Love Letter -->
+
+        <div class="letter">
+
+            <h2>💌 A Promise For Our Future</h2>
+
+            <p>
+
+                I don't promise that everything will
+                always be perfect.
+
+                <br><br>
+
+                There may be difficult days,
+                misunderstandings and moments when
+                life feels heavy.
+
+                <br><br>
+
+                But I promise that I will always
+                remember <span class="highlight">why I chose you.</span>
+
+                <br><br>
+
+                I want to grow with you,
+                laugh with you,
+                annoy you,
+                support you,
+                and make a million little memories
+                with you.
+
+                <br><br>
+
+                And when we look back someday,
+                I hope we can smile and say...
+
+                <br><br>
+
+                <span class="highlight">
+                    "We really made it through everything
+                    together." ❤️
+                </span>
+
+            </p>
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="buttons">
+
+            <button
+                class="back-btn"
+                onclick="window.location.href='dashboard.html'">
+
+                ← Back To Surprise
+
+            </button>
+
+
+            <button
+                onclick="window.location.href='boy.html'">
+
+                Continue To birthday Boy❤️
+
+            </button>
+
+        </div>
+
+
+        <div class="footer">
+
+            Made with all my heart, just for you. 🎀
+
+        </div>
+
+    </div>
+
+
+    <!-- Floating Hearts -->
+
+    <script>
+
+        const hearts = [
+            "❤️",
+            "💕",
+            "💗",
+            "💖",
+            "💓",
+            "🌸",
+            "✨"
+        ];
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.textContent =
+                hearts[
+                    Math.floor(
+                        Math.random() * hearts.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (14 + Math.random() * 20) + "px";
+
+            heart.style.animationDuration =
+                (5 + Math.random() * 5) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(createHeart, 700);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#040814,#15052f,#2d0b59);
+
+    font-family:'Poppins',sans-serif;
+
+    position:relative;
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    animation:twinkle 3s infinite alternate;
+
+    opacity:.8;
+}
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.floating-hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.floating-hearts span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff6aa7;
+
+    animation:floatHeart linear infinite;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.container{
+
+    position:relative;
+
+    z-index:5;
+
+    width:90%;
+
+    max-width:900px;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:65px;
+
+    color:white;
+
+    margin-bottom:15px;
+
+    text-shadow:0 0 20px #ff4da6;
+}
+
+.subtitle{
+
+    color:#ffd9ea;
+
+    font-size:18px;
+
+    margin-bottom:50px;
+}
+
+/* ==========================================
+   ENVELOPE
+========================================== */
+
+.envelope-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:50px;
+}
+
+.envelope{
+
+    width:320px;
+
+    height:220px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+/* Envelope Body */
+
+.envelope-front{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#ff7eb3,#ff4d88);
+
+    border-radius:10px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+/* Flap */
+
+.envelope-flap{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:110px;
+
+    background:#ff5d98;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:.8s;
+}
+
+/* Open Envelope */
+
+.envelope.open .envelope-flap{
+
+    transform:rotateX(180deg);
+}
+
+/* Heart */
+
+.heart-seal{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:45px;
+
+    z-index:5;
+
+    transition:.5s;
+}
+
+.envelope.open .heart-seal{
+
+    opacity:0;
+}
+
+/* ==========================================
+   LETTER
+========================================== */
+
+.letter{
+
+    display:none;
+
+    justify-content:center;
+
+    margin-top:30px;
+}
+
+.paper{
+
+    width:100%;
+
+    max-width:750px;
+
+    background:#fffdf7;
+
+    color:#333;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+    animation:slideUp 1s forwards;
+
+    text-align:left;
+}
+
+.paper h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:45px;
+
+    color:#ff4d88;
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.paper p{
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#444;
+
+    white-space:pre-wrap;
+}
+
+/* ==========================================
+   NEXT BUTTON
+========================================== */
+
+.next-section{
+
+    margin-top:40px;
+}
+
+#nextBtn{
+
+    display:none;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#ff4d88,#ff7eb3);
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#nextBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px #ff4da6;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes slideUp{
+
+    from{
+
+        transform:translateY(120px);
+
+        opacity:0;
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+    }
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(0) rotate(0);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:translateY(-110vh) rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.4;
+    }
+
+    to{
+
+        opacity:1;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.title{
+
+font-size:42px;
+
+}
+
+.paper{
+
+padding:25px;
+
+}
+
+.paper h2{
+
+font-size:35px;
+
+}
+
+.paper p{
+
+font-size:16px;
+
+}
+
+.envelope{
+
+width:260px;
+
+height:180px;
+
+}
+
+}

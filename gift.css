@@ -1,0 +1,568 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#07122d,#22083d,#3c1053);
+
+    color:white;
+
+    position:relative;
+
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    animation:twinkle 3s infinite alternate;
+
+    opacity:.8;
+
+}
+
+/* ==========================================
+   HEARTS
+========================================== */
+
+.floating-hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.floating-hearts span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff6ea8;
+
+    animation:heartFloat linear infinite;
+
+}
+
+/* ==========================================
+   SPARKLES
+========================================== */
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    position:relative;
+
+    z-index:5;
+
+    width:90%;
+
+    max-width:900px;
+
+    text-align:center;
+
+}
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:70px;
+
+    text-shadow:0 0 20px #ff5ca8;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#ffe5f0;
+
+    font-size:20px;
+
+    margin-bottom:60px;
+
+}
+
+/* ==========================================
+   GIFT
+========================================== */
+
+.gift-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:40px 0;
+
+}
+
+.gift-box{
+
+    position:relative;
+
+    width:220px;
+
+    height:220px;
+
+    cursor:pointer;
+
+    animation:shake 2s infinite;
+
+}
+
+/* Lid */
+
+.gift-lid{
+
+    position:absolute;
+
+    width:220px;
+
+    height:55px;
+
+    background:#ff4d88;
+
+    border-radius:10px;
+
+    top:0;
+
+    left:0;
+
+    z-index:5;
+
+    transition:1s;
+
+}
+
+/* Body */
+
+.gift-body{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:220px;
+
+    height:170px;
+
+    background:#ff77aa;
+
+    border-radius:0 0 12px 12px;
+
+}
+
+/* Ribbon */
+
+.gift-ribbon-vertical{
+
+    position:absolute;
+
+    width:26px;
+
+    height:220px;
+
+    background:white;
+
+    left:97px;
+
+    z-index:6;
+
+}
+
+.gift-ribbon-horizontal{
+
+    position:absolute;
+
+    width:220px;
+
+    height:26px;
+
+    background:white;
+
+    top:70px;
+
+    z-index:6;
+
+}
+
+/* Bow */
+
+.gift-bow{
+
+    position:absolute;
+
+    top:-18px;
+
+    left:75px;
+
+    width:70px;
+
+    height:40px;
+
+    z-index:7;
+
+}
+
+.gift-bow span{
+
+    position:absolute;
+
+    width:35px;
+
+    height:35px;
+
+    border:8px solid white;
+
+    border-radius:50% 50% 0 50%;
+
+}
+
+.gift-bow span:first-child{
+
+    left:0;
+
+    transform:rotate(-40deg);
+
+}
+
+.gift-bow span:last-child{
+
+    right:0;
+
+    transform:scaleX(-1) rotate(-40deg);
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.click-text{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+#giftMessage{
+
+    display:none;
+
+    margin-top:45px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    animation:fadeUp 1s ease forwards;
+
+}
+
+#giftMessage h2{
+
+    font-size:42px;
+
+    color:#ffd700;
+
+    margin-bottom:15px;
+
+}
+
+#giftMessage p{
+
+    line-height:2;
+
+    font-size:20px;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+#lastBtn{
+
+    display:none;
+
+    margin-top:40px;
+
+    padding:16px 40px;
+
+    background:linear-gradient(135deg,#ff4d88,#ff7eb3);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+#lastBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px #ff5ca8;
+
+}
+
+/* ==========================================
+   HEART BURST
+========================================== */
+
+#heartBurst{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.burst-heart{
+
+    position:absolute;
+
+    font-size:28px;
+
+    animation:burst 3s linear forwards;
+
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes shake{
+
+0%,100%{
+
+transform:rotate(0);
+
+}
+
+25%{
+
+transform:rotate(-2deg);
+
+}
+
+75%{
+
+transform:rotate(2deg);
+
+}
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes heartFloat{
+
+from{
+
+transform:translateY(0) rotate(0);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-120vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes burst{
+
+from{
+
+transform:translateY(0) scale(.5);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-110vh) scale(1.5);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.4;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:45px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.gift-box{
+
+transform:scale(.8);
+
+}
+
+#giftMessage{
+
+padding:25px;
+
+}
+
+#giftMessage h2{
+
+font-size:30px;
+
+}
+
+#giftMessage p{
+
+font-size:17px;
+
+}
+
+}

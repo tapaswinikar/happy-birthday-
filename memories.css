@@ -1,0 +1,360 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#040816,#16052d,#2d0b59);
+
+    position:relative;
+
+    color:white;
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    animation:twinkle 3s infinite alternate;
+
+    opacity:.7;
+}
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.floating-hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.floating-hearts span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff6ea8;
+
+    animation:floatHeart linear infinite;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:50px auto;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:5;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:65px;
+
+    color:white;
+
+    text-shadow:0 0 20px #ff5ca8;
+
+    margin-bottom:15px;
+}
+
+.subtitle{
+
+    font-size:20px;
+
+    color:#ffdbe8;
+
+    margin-bottom:50px;
+}
+
+/* ==========================================
+   GALLERY
+========================================== */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+/* ==========================================
+   PHOTO CARD
+========================================== */
+
+.photo-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    cursor:pointer;
+
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+.photo-card:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+    box-shadow:0 0 30px rgba(255,92,168,.7);
+}
+
+.photo-card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.photo-card:hover img{
+
+    transform:scale(1.08);
+}
+
+.photo-card p{
+
+    padding:18px;
+
+    font-size:18px;
+
+    color:white;
+
+    line-height:1.6;
+}
+
+/* ==========================================
+   NEXT BUTTON
+========================================== */
+
+#nextBtn{
+
+    display:inline-block;
+
+    margin-top:50px;
+
+    padding:16px 40px;
+
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#ff4d88,#ff7eb3);
+
+    color:white;
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#nextBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px #ff4da6;
+}
+
+/* ==========================================
+   LIGHTBOX
+========================================== */
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    padding:20px;
+}
+
+#lightbox img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:20px;
+
+    box-shadow:0 0 35px rgba(255,255,255,.3);
+}
+
+#closeBtn{
+
+    position:absolute;
+
+    top:25px;
+
+    right:35px;
+
+    font-size:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    transition:.3s;
+}
+
+#closeBtn:hover{
+
+    color:#ff5ca8;
+
+    transform:scale(1.2);
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.4;
+    }
+
+    to{
+
+        opacity:1;
+    }
+}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(0) rotate(0);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:42px;
+
+}
+
+.subtitle{
+
+font-size:17px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.photo-card img{
+
+height:260px;
+
+}
+
+.photo-card p{
+
+font-size:16px;
+
+}
+
+#closeBtn{
+
+font-size:40px;
+
+right:20px;
+
+}
+
+}

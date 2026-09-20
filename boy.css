@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #07122d,
+            #22083d,
+            #3c1053
+        );
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    padding: 40px 20px;
+}
+
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars {
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    animation: twinkle 3s infinite alternate;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.container {
+    width: 90%;
+    max-width: 850px;
+
+    text-align: center;
+
+    z-index: 5;
+
+    position: relative;
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 70px;
+
+    color: #ffd700;
+
+    text-shadow:
+        0 0 20px #ffcc00;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   PHOTO GALLERY
+========================================== */
+
+.photo-gallery {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   PHOTO CARD
+========================================== */
+
+.photo-card {
+    width: 220px;
+    height: 220px;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d88,
+            #ffb6d9,
+            #ffd700
+        );
+
+    box-shadow:
+        0 0 25px rgba(255, 77, 136, 0.7);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    opacity: 0;
+
+    transform: scale(0.5);
+}
+
+
+/* ==========================================
+   PHOTO
+========================================== */
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+/* ==========================================
+   PHOTO HOVER
+========================================== */
+
+.photo-card:hover {
+    transform: scale(1.08) rotate(2deg);
+
+    box-shadow:
+        0 0 40px rgba(255, 77, 136, 0.95);
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content {
+    margin-top: 20px;
+
+    padding: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+
+    line-height: 1.8;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 0 25px rgba(255, 105, 180, 0.15);
+}
+
+
+/* ==========================================
+   CONTENT HEADING
+========================================== */
+
+.content h2 {
+    color: #ffb6d9;
+
+    margin-bottom: 15px;
+
+    font-size: 27px;
+}
+
+
+/* ==========================================
+   CONTENT PARAGRAPHS
+========================================== */
+
+.content p {
+    margin: 12px 0;
+
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   NEXT BUTTON
+========================================== */
+
+.next-btn {
+    display: inline-block;
+
+    margin-top: 35px;
+    margin-bottom: 20px;
+
+    padding: 15px 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d88,
+            #ff7eb3
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(255, 77, 136, 0.4);
+}
+
+
+.next-btn:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 25px #ff5ca8;
+}
+
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.hearts span {
+    position: fixed;
+
+    bottom: -20px;
+
+    color: #ff6ea8;
+
+    animation:
+        float 7s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* ==========================================
+   FLOAT ANIMATION
+========================================== */
+
+@keyframes float {
+    from {
+        transform:
+            translateY(0)
+            rotate(0);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================
+   STAR ANIMATION
+========================================== */
+
+@keyframes twinkle {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   TABLET / MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .photo-gallery {
+        gap: 18px;
+    }
+
+    .photo-card {
+        width: 180px;
+        height: 180px;
+    }
+
+    .content {
+        padding: 22px;
+    }
+
+    .content h2 {
+        font-size: 23px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .next-btn {
+        padding: 13px 32px;
+    }
+}
+
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width: 450px) {
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .photo-card {
+        width: 145px;
+        height: 145px;
+    }
+
+    .photo-gallery {
+        gap: 12px;
+    }
+}

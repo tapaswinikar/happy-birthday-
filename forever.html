@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forever ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- =========================================
+         FOREVER PAGE SIZE ADJUSTMENTS
+         Decorations remain unchanged
+    ========================================== -->
+
+    <style>
+
+        /* =========================================
+           MAIN FOREVER PAGE
+        ========================================== */
+
+        .forever-page {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 35px 20px;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =========================================
+           MESSAGE BOX
+        ========================================== */
+
+        .forever-page #messageBox {
+
+            width: min(90%, 680px);
+
+            padding: 38px 45px;
+
+            margin: auto;
+
+            text-align: center;
+
+            box-sizing: border-box;
+
+            /* No scrollbar inside the box */
+            overflow: hidden;
+
+        }
+
+
+        /* =========================================
+           HEADING
+        ========================================== */
+
+        .forever-page #messageBox h1 {
+
+            font-size: clamp(28px, 4vw, 44px);
+
+            line-height: 1.25;
+
+            margin: 0 0 25px;
+
+        }
+
+
+        /* =========================================
+           MESSAGE TEXT
+        ========================================== */
+
+        .forever-page #messageBox p {
+
+            font-size: clamp(15px, 1.6vw, 18px);
+
+            line-height: 1.8;
+
+            margin: 0 auto 28px;
+
+        }
+
+
+        /* =========================================
+           FOREVER BUTTON
+        ========================================== */
+
+        .forever-page #foreverBtn {
+
+            font-size: 16px;
+
+            padding: 13px 28px;
+
+            min-height: 48px;
+
+            border-radius: 30px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================================
+           LARGE DESKTOP
+        ========================================== */
+
+        @media (min-width: 900px) {
+
+            .forever-page #messageBox {
+
+                width: 650px;
+
+                padding: 42px 50px;
+
+            }
+
+        }
+
+
+        /* =========================================
+           LAPTOP / SMALL DESKTOP
+        ========================================== */
+
+        @media (min-width: 600px) and (max-width: 899px) {
+
+            .forever-page #messageBox {
+
+                width: 75%;
+
+                padding: 35px 40px;
+
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 599px) {
+
+            .forever-page {
+
+                padding: 25px 15px;
+
+            }
+
+
+            .forever-page #messageBox {
+
+                width: 94%;
+
+                padding: 28px 22px;
+
+                border-radius: 22px;
+
+                overflow: hidden;
+
+            }
+
+
+            .forever-page #messageBox h1 {
+
+                font-size: 27px;
+
+                line-height: 1.3;
+
+                margin-bottom: 20px;
+
+            }
+
+
+            .forever-page #messageBox p {
+
+                font-size: 15px;
+
+                line-height: 1.7;
+
+                margin-bottom: 24px;
+
+            }
+
+
+            .forever-page #foreverBtn {
+
+                font-size: 14px;
+
+                padding: 12px 22px;
+
+            }
+
+        }
+
+
+        /* =========================================
+           VERY SMALL PHONES
+        ========================================== */
+
+        @media (max-width: 380px) {
+
+            .forever-page #messageBox {
+
+                width: 96%;
+
+                padding: 24px 18px;
+
+            }
+
+
+            .forever-page #messageBox h1 {
+
+                font-size: 24px;
+
+            }
+
+
+            .forever-page #messageBox p {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="forever-page" style="opacity: 1;">
+
+
+    <!-- =========================================
+         BACKGROUND MUSIC
+    ========================================== -->
+
+    <audio id="loveSong" loop>
+
+        <source
+            src="./music/birthday.mp3"
+            type="audio/mpeg"
+        >
+
+        Your browser does not support audio.
+
+    </audio>
+
+
+
+    <!-- =========================================
+         FOREVER MESSAGE
+    ========================================== -->
+
+    <div id="messageBox">
+
+
+        <h1>
+            ❤️ Will You Stay With Me Forever? ❤️
+        </h1>
+
+
+        <p>
+
+            click anywhere to listen your favourite
+
+            <br>
+
+            You've unlocked every piece of my heart.
+
+            <br><br>
+
+
+            Thank you for being my happiness,
+
+            <br>
+
+            my peace,
+
+            <br>
+
+            and my greatest blessing. ❤️
+
+            <br><br>
+
+
+            Happy Birthday, My Love.
+
+            <br><br>
+
+
+            No matter where life takes us,
+
+            <br>
+
+            I promise to choose you every single day.
+
+            <br><br>
+
+
+            I love you endlessly. 💖
+
+        </p>
+
+
+        <button id="foreverBtn">
+
+            💍 Forever & Always
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         MAIN JAVASCRIPT
+    ========================================== -->
+<script>
+window.addEventListener("pageshow", function () {
+    document.body.style.opacity = "1";
+});
+</script>
+
+<script src="script.js"></script>
+<script src="privacy.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

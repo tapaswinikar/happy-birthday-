@@ -1,0 +1,1547 @@
+
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* ==========================================
+   MAIN BACKGROUND
+========================================== */
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 100, 180, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(150, 100, 255, 0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            -45deg,
+            #07142d,
+            #131b4a,
+            #35145f,
+            #16082e
+        );
+
+    background-size: 400% 400%;
+
+    animation: bgMove 18s ease infinite;
+}
+
+
+/* ==========================================
+   BACKGROUND PARTICLES
+========================================== */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, .9) 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255, 180, 255, .7) 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(180, 220, 255, .7) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        28px 28px,
+        42px 42px,
+        58px 58px;
+
+    background-position:
+        0 0,
+        15px 22px,
+        35px 12px;
+
+    opacity: .65;
+
+    animation:
+        particles1 26s linear infinite,
+        sparkle 3.5s ease-in-out infinite;
+}
+
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: -30%;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, .7) 1px,
+            transparent 1.6px
+        );
+
+    background-size: 22px 22px;
+
+    opacity: .2;
+
+    animation:
+        particles2 38s linear infinite reverse;
+}
+
+
+/* ==========================================
+   TEXT
+========================================== */
+
+h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 4rem;
+    color: #fff;
+
+    text-shadow:
+        0 0 15px rgba(255, 255, 255, .5);
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    animation:
+        fadeHeading 1.5s forwards;
+}
+
+
+p {
+    font-size: 1.3rem;
+    color: #f5f5f5;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    animation:
+        fadeParagraph 1.5s forwards;
+
+    animation-delay: 1s;
+}
+
+
+/* ==========================================
+   HEART
+========================================== */
+
+.heart {
+    position: relative;
+
+    width: 170px;
+    height: 170px;
+
+    margin: 0 auto 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3b8b,
+            #ff6cb7
+        );
+
+    transform: rotate(-45deg);
+
+    animation:
+        heartbeat 1.15s infinite;
+
+    box-shadow:
+        0 0 25px rgba(255, 80, 180, .5),
+        0 0 60px rgba(255, 80, 180, .4),
+        0 0 100px rgba(255, 80, 180, .2);
+}
+
+
+.heart::before,
+.heart::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: inherit;
+}
+
+
+.heart::before {
+    top: -85px;
+    left: 0;
+}
+
+
+.heart::after {
+    left: 85px;
+    top: 0;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+    padding: 15px 40px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d6d,
+            #ff758f
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px
+        rgba(255, 80, 140, .3);
+}
+
+
+button:hover,
+.btn:hover {
+    transform:
+        translateY(-3px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, .4),
+        0 0 45px rgba(255, 0, 170, .5);
+}
+
+
+button:active {
+    transform: scale(.97);
+}
+
+
+/* ==========================================
+   DATE INPUT
+========================================== */
+
+input[type="date"] {
+    width: 300px;
+
+    padding: 15px 20px;
+
+    background: #fff;
+    color: #000;
+
+    border:
+        2px solid #ff4d88;
+
+    border-radius: 40px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    outline: none;
+
+    transition: .3s;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 105, 180, .25);
+}
+
+
+input[type="date"]:hover,
+input[type="date"]:focus {
+    border-color: #ff1f6d;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(255, 105, 180, .4);
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+/* ==========================================
+   PASSWORD PAGE
+========================================== */
+
+.password-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 140, 200, .25),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #2c1830,
+            #8cb2eb
+        );
+
+    color: #fff;
+
+    padding: 25px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.password-page .lock {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation:
+        lockGlow 2s infinite ease-in-out;
+}
+
+
+.password-page h1 {
+    opacity: 1;
+    transform: none;
+    animation: none;
+
+    font-size:
+        clamp(42px, 8vw, 70px);
+
+    margin-bottom: 12px;
+}
+
+
+.password-page p {
+    max-width: 500px;
+
+    opacity: 1;
+    transform: none;
+    animation: none;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, .9);
+}
+
+
+.password-page input {
+    margin: 20px 0;
+}
+
+
+#unlockBtn {
+    width: 220px;
+}
+
+
+#error {
+    min-height: 25px;
+
+    margin-top: 15px;
+
+    color: #ffd2df;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding:
+        70px 20px 90px;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 90, 160, .12),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(140, 90, 255, .13),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #081c3a,
+            #000814
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.dashboard h1 {
+    font-family: "Great Vibes", cursive;
+
+    font-size:
+        clamp(45px, 7vw, 70px);
+
+    color: #ff9abb;
+
+    margin-bottom: 15px;
+
+    opacity: 1;
+    transform: none;
+    animation: none;
+
+    text-shadow:
+        0 0 15px rgba(255, 100, 170, .45);
+}
+
+
+.dashboard > p {
+    max-width: 800px;
+
+    margin:
+        0 auto 50px;
+
+    font-size: 20px;
+
+    color: #ddd;
+
+    opacity: 1;
+    transform: none;
+    animation: none;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.card-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px, 1fr)
+        );
+
+    gap: 28px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .11),
+            rgba(255, 255, 255, .035)
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .16);
+
+    border-radius: 25px;
+
+    padding: 32px 25px;
+
+    min-height: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, .25);
+
+    cursor: pointer;
+}
+
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 110, 180, .12);
+
+    filter: blur(15px);
+
+    pointer-events: none;
+}
+
+
+.card:hover {
+    transform:
+        translateY(-10px)
+        scale(1.025);
+
+    border-color:
+        rgba(255, 150, 200, .4);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 77, 109, .35),
+        0 20px 50px
+        rgba(0, 0, 0, .35);
+}
+
+
+.card .emoji,
+.card span {
+    font-size: 55px;
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    transition:
+        transform .35s ease;
+}
+
+
+.card:hover .emoji,
+.card:hover span {
+    transform:
+        scale(1.15)
+        rotate(-3deg);
+}
+
+
+.card h2 {
+    font-size: 24px;
+
+    margin-bottom: 10px;
+
+    color: #fff;
+}
+
+
+.card p {
+    opacity: 1;
+
+    animation: none;
+
+    transform: none;
+
+    font-size: 17px;
+
+    color: #eee;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   POPUP
+========================================== */
+
+.popup {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, .72);
+
+    backdrop-filter:
+        blur(8px);
+
+    z-index: 9998;
+}
+
+
+.popup-content {
+    position: relative;
+
+    width: min(700px, 95vw);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 40px 30px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(40, 20, 60, .97),
+            rgba(15, 10, 35, .97)
+        );
+
+    border:
+        1px solid
+        rgba(255, 150, 200, .3);
+
+    box-shadow:
+        0 0 50px
+        rgba(255, 80, 160, .25);
+}
+
+
+#closePopup {
+    position: absolute;
+
+    top: 12px;
+    right: 20px;
+
+    font-size: 35px;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+#closePopup:hover {
+    color: #ff8db6;
+
+    transform:
+        rotate(90deg)
+        scale(1.1);
+}
+
+
+#popupBody {
+    color: #fff;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    white-space: pre-line;
+}
+
+
+/* ==========================================
+   LAST BUTTON
+========================================== */
+
+.last-section {
+    margin-top: 80px;
+}
+
+
+#LastClick {
+    padding: 18px 45px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d6d,
+            #ff758f
+        );
+
+    color: #fff;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 77, 109, .6);
+
+    transition: .3s;
+}
+
+
+#LastClick:hover {
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 0 35px
+        rgba(255, 77, 109, .8);
+}
+
+
+/* ==========================================
+   ENDING SCREEN
+========================================== */
+
+#ending-Screen {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 1.2s;
+
+    z-index: 9999;
+}
+
+
+#ending-Screen.show {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+#typewriter {
+    width:
+        min(90%, 900px);
+
+    font-family:
+        "Great Vibes", cursive;
+
+    color: white;
+
+    font-size: 45px;
+
+    text-align: center;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    pointer-events: none;
+
+    z-index: 9997;
+
+    animation:
+        floatHeart 6s linear forwards;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(255, 120, 190, .6)
+        );
+}
+
+
+@keyframes floatHeart {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: .9;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================
+   FOREVER PAGE
+========================================== */
+
+.forever-page {
+    margin: 0;
+
+    padding:
+        50px 20px;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    display: block;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 80, 160, .16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(150, 80, 255, .14),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050816,
+            #12042a,
+            #25094f
+        );
+
+    font-family:
+        "Poppins",
+        sans-serif;
+}
+
+
+.forever-page::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #fff 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    opacity: .45;
+
+    animation:
+        twinkle 3s infinite alternate;
+
+    z-index: 0;
+}
+
+
+.overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, .35);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* ==========================================
+   FOREVER CONTAINER
+========================================== */
+
+.forever-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   FOREVER TITLE
+========================================== */
+
+.forever-title {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(45px, 8vw, 70px);
+
+    color: white;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 20px #ff4da6;
+
+    animation:
+        glow 2s infinite alternate;
+}
+
+
+/* ==========================================
+   TYPING TEXT
+========================================== */
+
+.typing-text {
+    width: 100%;
+
+    font-size: 28px;
+
+    line-height: 1.8;
+
+    color: #ffe4ef;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+
+    overflow-wrap: break-word;
+
+    border-right:
+        3px solid white;
+
+    animation:
+        blink .8s infinite;
+}
+
+
+/* ==========================================
+   LOVE LETTER
+========================================== */
+
+.love-letter {
+    margin-top: 40px;
+
+    width: 100%;
+
+    text-align: left;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    backdrop-filter:
+        blur(12px);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    line-height: 2;
+
+    color: #fff;
+
+    word-break: break-word;
+
+    overflow-wrap: break-word;
+}
+
+
+/* ==========================================
+   BIRTHDAY WISHES
+========================================== */
+
+.birthday-wishes {
+    margin-top: 40px;
+
+    width: 100%;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    line-height: 2;
+
+    color: white;
+}
+
+
+/* ==========================================
+   MEMORIES
+========================================== */
+
+.memories {
+    margin-top: 40px;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: 20px;
+}
+
+
+.memory-card {
+    background:
+        rgba(255, 255, 255, .08);
+
+    backdrop-filter:
+        blur(12px);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    transition: .3s;
+}
+
+
+.memory-card:hover {
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 77, 166, .5);
+}
+
+
+.memory-card img {
+    width: 100%;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+.memory-card p {
+    margin-top: 15px;
+
+    opacity: 1;
+
+    transform: none;
+
+    animation: none;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes bgMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform:
+            rotate(-45deg)
+            scale(1);
+    }
+
+    14% {
+        transform:
+            rotate(-45deg)
+            scale(1.08);
+    }
+
+    28% {
+        transform:
+            rotate(-45deg)
+            scale(.98);
+    }
+
+    42% {
+        transform:
+            rotate(-45deg)
+            scale(1.12);
+    }
+
+    70% {
+        transform:
+            rotate(-45deg)
+            scale(1);
+    }
+}
+
+
+@keyframes fadeHeading {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeParagraph {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes particles1 {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-120px);
+    }
+}
+
+
+@keyframes particles2 {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(180px);
+    }
+}
+
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: .45;
+
+        filter:
+            brightness(.9);
+    }
+
+    50% {
+        opacity: 1;
+
+        filter:
+            brightness(1.5);
+    }
+}
+
+
+@keyframes glow {
+
+    from {
+        text-shadow:
+            0 0 10px #ff4da6;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #ff4da6,
+            0 0 40px #ff4da6,
+            0 0 60px #ff99cc;
+    }
+}
+
+
+@keyframes blink {
+
+    50% {
+        border-color:
+            transparent;
+    }
+}
+
+
+@keyframes twinkle {
+
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes lockGlow {
+
+    0%, 100% {
+        transform: scale(1);
+
+        filter:
+            drop-shadow(
+                0 0 5px
+                rgba(255, 150, 210, .5)
+            );
+    }
+
+    50% {
+        transform: scale(1.08);
+
+        filter:
+            drop-shadow(
+                0 0 20px
+                rgba(255, 150, 210, .9)
+            );
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        align-items: flex-start;
+    }
+
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+
+    .heart {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .heart::before,
+    .heart::after {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .heart::before {
+        top: -65px;
+    }
+
+
+    .heart::after {
+        left: 65px;
+    }
+
+
+    .password-page {
+        min-height: 100vh;
+
+        padding:
+            30px 18px;
+    }
+
+
+    .password-page h1 {
+        font-size: 43px;
+    }
+
+
+    .password-page p {
+        font-size: 16px;
+    }
+
+
+    .dashboard {
+        padding:
+            50px 15px 70px;
+    }
+
+
+    .dashboard h1 {
+        font-size: 45px;
+    }
+
+
+    .dashboard > p {
+        font-size: 17px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .card-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .card {
+        min-height: 230px;
+
+        padding: 28px 20px;
+    }
+
+
+    .card span,
+    .card .emoji {
+        font-size: 48px;
+    }
+
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+
+    .popup-content {
+        width: 94vw;
+
+        padding:
+            45px 20px 30px;
+    }
+
+
+    #popupBody {
+        font-size: 16px;
+    }
+
+
+    #LastClick {
+        width: 100%;
+
+        max-width: 320px;
+    }
+
+
+    #typewriter {
+        font-size: 30px;
+    }
+
+
+    .forever-page {
+        padding:
+            35px 15px;
+    }
+
+
+    .forever-container {
+        padding: 20px 10px;
+    }
+
+
+    .forever-title {
+        font-size: 45px;
+    }
+
+
+    .typing-text {
+        font-size: 20px;
+    }
+
+
+    .love-letter,
+    .birthday-wishes {
+        padding: 20px;
+    }
+
+
+    .memory-card {
+        padding: 15px;
+    }
+
+
+    button,
+    .btn,
+    input[type="button"],
+    input[type="submit"] {
+        width: 100%;
+
+        max-width: 320px;
+    }
+
+
+    input[type="date"] {
+        width: 100%;
+
+        max-width: 320px;
+    }
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
